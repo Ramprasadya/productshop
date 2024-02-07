@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import ProductCard from "../ProductCard";
 import Navbar from "./Navbar";
 import Cart from "./Cart";
+import Footer from "./Footer";
 
 const Home = () => {
   const [product, setProduct] = useState([]);
@@ -112,6 +113,7 @@ const Home = () => {
           <Cart cart={cart} />
         </div>
       )}
+      <Footer/>
     </div>
   );
 };
