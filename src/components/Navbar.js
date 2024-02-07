@@ -17,7 +17,7 @@ const Navbar = ({handleShow ,quantity}) => {
                
             </ul>
         </nav>
-        <button className='bg-red-500 py-[12px] px-[15px] text-white rounded-xl absolute right-8 top-[22px] ' onClick={handleLogOut}  >Logout</button>
+        <button className='bg-red-500 py-[12px] px-[15px] text-white rounded-xl absolute right-8 top-[4.5rem] sm:top-[22px] ' onClick={handleLogOut}  >Logout</button>
     </div>
   )
 }

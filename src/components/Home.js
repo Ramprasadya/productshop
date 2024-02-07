@@ -50,8 +50,8 @@ const Home = () => {
     <div  >
       <Navbar handleShow={handleShow} quantity={cart.length} />
       {showCart ? (
-        <div className="mt-4 ml-16 " >
-          <div className="flex justify-around " >
+        <div className=" mt-12 sm:mt-4 ml-2 sm:ml-16 " >
+          <div className=" flex flex-col xsm2:flex-row justify-around " >
            <div>
            <input
               className="mb-4 flex-1 modal1-ip-field w-full text-[16px] py-[15px] px-[30px] border border-gray-500 outline-none rounded-[15px] "
