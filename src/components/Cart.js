@@ -10,7 +10,7 @@ const Cart = ({cart}) => {
       {Cart.length > 0  ? ( <div className='flex flex-wrap' >
       {
         Cart.map((cartItem)=>{
-        return  <div className=" w-[300px] h-auto m-5 "   > 
+        return  <div className=" w-[300px] h-auto m-5 " key={Cart.id}   > 
        <img className='w-fit h-[250px] rounded-[20px] '  src={cartItem.images[0]} alt="not"  />
        <p>{cartItem.title}</p>
       <div className='flex' >

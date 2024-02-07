@@ -9,8 +9,6 @@ const Home = () => {
   const [minPrice, setMinPrice] = useState("");
   const [maxPrice, setMaxPrice] = useState("");
 
-  console.log(searchQuery);
-
   const productData = () => {
     fetch("https://dummyjson.com/products")
       .then((res) => res.json())
@@ -26,7 +24,7 @@ const Home = () => {
 
   const [cart, setCart] = useState([]);
   const [showCart, setShowCart] = useState(true);
-  // console.log(cart)
+
   const addToCart = (data) => {
     setCart([...cart, { ...data, quantity: 1 }]);
   };
@@ -41,15 +39,7 @@ const Home = () => {
 
     return titleMatch && priceMatch;
   });
-  // const filterProductPrice= product.filter((result)=>{
-  //  return (
-  //   result.title.toLowerCase().includes(searchQuery.toLowerCase())
-  //  )
-  // })
 
-
-
-  //  console.log(product)
 
   const handleShow = (value) => {
     setShowCart(value);
@@ -59,7 +49,7 @@ const Home = () => {
     <div  >
       <Navbar handleShow={handleShow} quantity={cart.length} />
       {showCart ? (
-        <div className="mt-4" >
+        <div className="mt-4 ml-16 " >
           <div className="flex justify-around " >
            <div>
            <input

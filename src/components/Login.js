@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 const Login = ({setIsAuthenticated}) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [showLOgin, setShowLOgin] = useState("Click on Show button see the Login detail")
   const navigate = useNavigate();
 
   const handleLogin = () => {
@@ -26,6 +27,15 @@ const Login = ({setIsAuthenticated}) => {
     });
   };
 
+  const handleDispaly=()=>{
+    setShowLOgin("username: kminchelle , password: 0lelplR")
+    setTimeout(()=>{
+      setShowLOgin(showLOgin)
+    },6000)
+  }
+
+  // username: 'kminchelle',
+  // password: '0lelplR',
   return (
     <div>
       <h2 className=" font-bold text-[30px] text-center  mt-6 " >Login page </h2>
@@ -49,6 +59,11 @@ const Login = ({setIsAuthenticated}) => {
         />
       </div>
       <button className=" py-[12px] px-[15px] border-[2px] border-blue-400 rounded-[20px] bg-green-600 text-white  "  onClick={handleLogin}>Login</button>
+
+      </div>
+      <div className=" text-center mt-[3rem] border-2 border-gray-600 p-5 w-fit  " >
+        <h1>{showLOgin}</h1>
+        <button className='border border-violet-300 py-[10px] px-[12px] mt-5  '  onClick={handleDispaly} > Show Login Detail </button>
       </div>
     </div>
   );
