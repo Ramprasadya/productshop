@@ -13,7 +13,7 @@ const Navbar = ({handleShow ,quantity}) => {
 
             <ul className= " flex justify-around  " >
                 <li className='hover:font-extrabold text-[20px]' onClick={()=> handleShow(true) } ><Link to="/" >Shop</Link></li>
-                <li className='hover:font-extrabold text-[20px]' onClick={()=> handleShow(false) } >Cart <span>{quantity}</span> </li>
+                <li className='hover:font-extrabold text-[20px]' onClick={()=> handleShow(false) } >Cart <span>{quantity.length > 0 ? quantity : ""}</span> </li>
                
             </ul>
         </nav>
