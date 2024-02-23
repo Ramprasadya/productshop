@@ -1,14 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import ProductCard from "../ProductCard";
 import Navbar from "./Navbar";
 import Cart from "./Cart";
 import Footer from "./Footer";
+import ShopContext from "../context/context";
 
 const Home = () => {
   const [product, setProduct] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [minPrice, setMinPrice] = useState("");
   const [maxPrice, setMaxPrice] = useState("");
+
+  // const {Count,setCount} = useContext(ShopContext)
 
   const productData = () => {
     fetch("https://dummyjson.com/products")
@@ -49,6 +52,7 @@ const Home = () => {
   return (
     <div  >
       <Navbar handleShow={handleShow} quantity={cart.length} />
+      {/* <button onClick={()=>setCount(Count+1)} >count  == {Count} </button> */}
       {showCart ? (
         <div className=" mt-12 sm:mt-4 ml-2 sm:ml-16 " >
           <div className=" flex flex-col xsm2:flex-row justify-around " >

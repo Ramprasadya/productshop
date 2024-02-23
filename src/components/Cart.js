@@ -9,12 +9,24 @@ const Cart = ({cart}) => {
     <div>
       {Cart.length > 0  ? ( <div className='flex flex-wrap' >
       {
-        Cart.map((cartItem)=>{
+        Cart.map((cartItem,cartIndex)=>{
         return  <div className=" w-[300px] h-auto m-5 " key={Cart.id}   > 
        <img className='w-fit h-[250px] rounded-[20px] '  src={cartItem.images[0]} alt="not"  />
        <p>{cartItem.title}</p>
       <div className='flex' >
+      <button onClick={()=>{
+         const _CART = Cart.map((item,index)=>{
+          return cartIndex === index ? {...item , quantity : item.quantity > 1 ? item.quantity - 1 : 1 } : item
+        })
+        setCart(_CART)
+      }} >-</button>
       <p>{cartItem.quantity}</p>
+      <button onClick={()=>{
+        const _CART = Cart.map((item,index)=>{
+          return cartIndex === index ? {...item , quantity : item.quantity +1 } : item
+        })
+        setCart(_CART)
+      }} >+</button>
       </div>
        <p>${cartItem.price * cartItem.quantity }</p>
        {/* <button className='py-[12px] px-[14px] border border-red-400  ' onClick={()=>addToCart(data)}  >Add to Cart</button> */}
